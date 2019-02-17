@@ -9,14 +9,14 @@ int main()
 
 int at[10],bt[10],ct[10]={0},i,n,tat[10]={0},wt[10]={0},total,temp_bt[10]={0};
 int index[10]={0,1,2,3,4,5,6,7,8,9};
-printf("enter n \n");
+printf("enter no. of processes n \n");
 scanf("%d",&n);
 
-printf("enter at\n");
+printf("enter arrival time at\n");
 for(i=0;i<n;i++)
 scanf("%d",&at[i]);
 
-printf("enter bt\n");
+printf("enter burst time bt\n");
 for(i=0;i<n;i++)
 scanf("%d",&bt[i]);
 
