@@ -12,14 +12,14 @@ Weather* ptr1=Weather::getinstance();
 
 Weather* ptr2=Weather::getinstance();
 
-cout<<"hold";
+
 string month[]={"Jan","Feb","Mar","Apr","May","Jun","July","Aug","Sept","Oct","Nov","Dec"};
 string crop1,city1,crop2,city2;
 int rain1,temp1,rain2,temp2;
-cout<<"Enter name, ideal rainfall, ideal temp fpr crop1\n";
+cout<<"Enter name, ideal rainfall, ideal temp for crop1\n";
 cin>>crop1>>rain1>>temp1;
 
-cout<<"Enter name, ideal rainfall, ideal temp fpr crop2\n";
+cout<<"Enter name, ideal rainfall, ideal temp for crop2\n";
 cin>>crop2>>rain2>>temp2;
 
 Farmer_help obj1(crop1,rain1,temp1);
