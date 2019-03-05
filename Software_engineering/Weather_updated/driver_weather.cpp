@@ -31,16 +31,18 @@ Weather* ptr1=Weather::getinstance(rain,temp);
 Weather* ptr2=Weather::getinstance(rain,temp);
 
 Farmer_help obj1(crop1,rain1,temp1);
-cout<<"Ideal time for "<<obj1.getcrop()<<" crop is :"<<month[ptr2->getidealmonth(obj1.getidealrain(),obj1.getidealtemp())]<<endl;
+cout<<"Ideal time for "<<obj1.getcrop()<<" crop is :"<<month[obj1.farmer_suggest(ptr1->getrainfall(),ptr1->gettemp())]<<endl;
+
+//cout<<month[obj1.farmer_suggest(ptr1->getrainfall(),ptr1->gettemp())];
+
 
 
 Farmer_help obj2(crop2,rain2,temp2);
-cout<<"Ideal time for "<<obj2.getcrop()<<" crop is :"<<month[ptr2->getidealmonth(obj2.getidealrain(),obj2.getidealtemp())]<<endl;
+cout<<"Ideal time for "<<obj2.getcrop()<<" crop is :"<<month[obj2.farmer_suggest(ptr1->getrainfall(),ptr1->gettemp())]<<endl;
 
 
 
 cout<<"\nCount="<<ptr1->getcount()<<"\n";
-
 
 
 
@@ -56,14 +58,16 @@ Weather* ptr3=Weather::getinstance(rain,temp);
 
 Weather* ptr4=Weather::getinstance(rain,temp);
 
-Travel_planner city_obj1(city1);
-cout<<"Ideal month for travel in "<<city_obj1.getcity()<<" is :"<<month[ptr2->getidealmonth(rain3,temp3)]<<endl;
+Travel_planner city_obj1(city1,rain3,temp3);
+cout<<"Ideal month for travel in "<<city_obj1.getcity()<<" is :"<<month[city_obj1.travel_suggest(ptr1->getrainfall(),ptr1->gettemp())]<<endl;
 
-Travel_planner city_obj2(city2);
-cout<<"Ideal month for travel in "<<city_obj2.getcity()<<" is :"<<month[ptr2->getidealmonth(rain4,temp4)]<<endl;
+Travel_planner city_obj2(city2,rain4,temp4);
+cout<<"Ideal month for travel in "<<city_obj2.getcity()<<" is :"<<month[city_obj2.travel_suggest(ptr1->getrainfall(),ptr1->gettemp())]<<endl;
 
 
 cout<<"\nCount="<<ptr3->getcount()<<"\n";
+
+
 
 return 0;
 

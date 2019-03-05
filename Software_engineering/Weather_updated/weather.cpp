@@ -37,30 +37,22 @@ return instance;
 
 }
 
-
-int getidealmonth(double rainvalue,double tempvalue)
+double* getrainfall()
 {
-double minr=abs(rainfall[0]-rainvalue),mint=abs(temperature[0]-tempvalue);
-int index=0;
+return rainfall;
+}
 
-for(int i=1;i<12;i++)
-if((abs(rainfall[i]-rainvalue)+abs(temperature[i]-tempvalue))<(minr+mint))
+double* gettemp()
 {
-minr=abs(rainfall[i]-rainvalue);
-mint=abs(temperature[i]-tempvalue);
-index=i;
+return temperature;
 }
-return index;
-}
- 
- 
+
 int getcount()
 {
 return count;
 }
 
 };
-
 
 int Weather::count=0;
 Weather* Weather:: instance=NULL;

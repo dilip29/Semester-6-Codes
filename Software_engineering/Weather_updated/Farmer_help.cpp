@@ -1,4 +1,5 @@
 #include<iostream>
+#include<cmath>
 //#include "weather.cpp"
 using namespace std;
 
@@ -16,6 +17,26 @@ Farmer_help(string crp, int rain,int temp)
     ideal_temp=temp;
     crop=crp;
 }
+
+
+int farmer_suggest(double rain[],double temp[]){
+
+double minr=abs(rain[0]-ideal_rain),mint=abs(temp[0]-ideal_temp);
+int index=0;
+
+for(int i=1;i<12;i++)
+if((abs(rain[i]-ideal_rain)+abs(temp[i]-ideal_temp))<(minr+mint))
+{
+minr=abs(rain[i]-ideal_rain);
+mint=abs(temp[i]-ideal_temp);
+index=i;
+}
+return index;
+
+
+}
+
+
 
 int getidealrain(){
 
