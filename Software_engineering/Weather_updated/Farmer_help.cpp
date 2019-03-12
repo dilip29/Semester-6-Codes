@@ -1,8 +1,12 @@
 #include<iostream>
 #include<cmath>
-//#include "weather.cpp"
+#include "weather.cpp"
 using namespace std;
 
+int Weather::count=0;
+Weather* Weather:: instance=NULL;
+//double Weather:: rainfall[12]={0};
+//double Weather :: temperature[12]={0};
 
 class Farmer_help{
 
@@ -19,7 +23,11 @@ Farmer_help(string crp, int rain,int temp)
 }
 
 
-int farmer_suggest(double rain[],double temp[]){
+int farmer_suggest(){
+
+Weather* ptr=Weather::getinstance();
+double *rain=ptr->getrainfall();
+double *temp=ptr->gettemp();
 
 double minr=abs(rain[0]-ideal_rain),mint=abs(temp[0]-ideal_temp);
 int index=0;

@@ -2,22 +2,23 @@
 #include<cmath>
 using namespace std;
 
-
 class Weather{
 
 private:
-static double rainfall[12],temperature[12];
+ double rainfall[12],temperature[12];
 static Weather* instance;
 static int count;
 
-Weather(double rainfl[],double temprt[]){
-cout<<"Enter details Raifall and temperature\n";
+Weather(){
+//cout<<"Enter details Raifall and temperature\n";
 count++;
+double temp[]={35.5,25,30,34,32,45,40,44,32,45,31,30};
+double rain[]={110,150,110,115,120,115,125,130,140,145,125,133};
 
 for(int i=0;i<12;i++)
 {
-rainfall[i]=rainfl[i];
-temperature[i]=temprt[i];
+rainfall[i]=rain[i];
+temperature[i]=temp[i];
 }
 //cin>>rainfall[i]>>temperature[i];
 
@@ -28,10 +29,10 @@ cout<<endl;
 public:
 
 
-static Weather* getinstance(double rainfl[],double temprt[])
+static Weather* getinstance()
 {
 if(instance==NULL)
-instance=new Weather(rainfl,temprt);
+instance=new Weather();
 
 return instance;
 
@@ -54,10 +55,7 @@ return count;
 
 };
 
-int Weather::count=0;
-Weather* Weather:: instance=NULL;
-double Weather:: rainfall[12]={0};
-double Weather :: temperature[12]={0};
+
 
 
 

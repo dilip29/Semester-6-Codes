@@ -24,7 +24,13 @@ string getcity()
 }
 
 
-int travel_suggest(double rain[],double temp[]){
+int travel_suggest(){
+
+
+Weather* ptr=Weather::getinstance();
+double *rain=ptr->getrainfall();
+double *temp=ptr->gettemp();
+
 
 double minr=abs(rain[0]-ideal_rain),mint=abs(temp[0]-ideal_temp);
 int index=0;
