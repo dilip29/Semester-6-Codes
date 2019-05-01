@@ -1,0 +1,35 @@
+A51 MACRO ASSEMBLER  MULTIPLY                                                             03/15/2019 16:14:04 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.02b
+OBJECT MODULE PLACED IN Multiply.OBJ
+ASSEMBLER INVOKED BY: C:\Keil\C51\BIN\A51.EXE Multiply.asm SET(SMALL) DEBUG EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     ORG 0000H
+0000 7401              2     MOV A, #01
+0002 75F002            3     MOV B, #02
+0005 A4                4     MUL AB
+0006 75F003            5     MOV B, #03
+0009 A4                6     MUL AB
+000A 75F004            7     MOV B, #04
+000D A4                8     MUL AB
+000E F580              9     MOV P0, A
+                      10     END
+A51 MACRO ASSEMBLER  MULTIPLY                                                             03/15/2019 16:14:04 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+B. . . . . . . . .  D ADDR   00F0H   A   
+P0 . . . . . . . .  D ADDR   0080H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

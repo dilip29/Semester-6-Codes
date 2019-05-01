@@ -1,0 +1,44 @@
+A51 MACRO ASSEMBLER  ARRAY_SUM                                                            03/15/2019 14:56:11 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.02b
+OBJECT MODULE PLACED IN Array_sum.OBJ
+ASSEMBLER INVOKED BY: C:\Keil\C51\BIN\A51.EXE Array_sum.asm SET(SMALL) DEBUG EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     ORG 0000h
+0000 020040            2             LJMP main
+0040                   3      ORG 0040h
+0040 78A0              4      main: MOV R0,#0A0h             ; Initializing base address location where array is stored
+0042 790A              5       MOV R1,#0Ah              ; Number of elements in array
+0044 7A00              6       MOV R2,#00h
+0046 E9                7       MOV A,R1                 ; Storing number of elements in array
+0047 FB                8       MOV R3,A
+0048 E6                9       loop: MOV A,@ R0       ; Coping value from memory location at which R0 is pointing
+0049 2A               10        ADD A,R2
+004A FA               11        MOV R2,A         ; Sum is stored in R2 register
+004B 08               12        INC R0
+004C D9FA             13        DJNZ R1, loop
+004E 8BF0             14       MOV B,R3                 ; Moving number of elements to register B
+0050 EA               15       MOV A,R2                 ; Moving Sum all elements to register A
+0051 84               16       DIV AB                   ; Finding average
+0052 FC               17       MOV R4,A                 ; Storing the result in R4 register
+                      18     END
+A51 MACRO ASSEMBLER  ARRAY_SUM                                                            03/15/2019 14:56:11 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+B. . . . . . . . .  D ADDR   00F0H   A   
+LOOP . . . . . . .  C ADDR   0048H   A   
+MAIN . . . . . . .  C ADDR   0040H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

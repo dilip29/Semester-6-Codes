@@ -1,0 +1,98 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        03/29/2019  16:07:12  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL\C51\BIN\BL51.EXE BlockC.obj TO AverageC
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  BlockC.obj (BLOCKC)
+  C:\KEIL\C51\LIB\C51S.LIB (?C_STARTUP)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?COPY)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?CSTPTR)
+
+
+LINK MAP OF MODULE:  AverageC (BLOCKC)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     000BH     UNIT         _DATA_GROUP_
+            IDATA   0013H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     0108H     UNIT         ?C?LIB_CODE
+            CODE    0908H     002FH     UNIT         ?PR?MAIN?BLOCKC
+            CODE    0937H     000CH     UNIT         ?C_C51STARTUP
+            CODE    0943H     000BH     UNIT         ?CO?BLOCKC
+
+
+
+OVERLAY MAP OF MODULE:   AverageC (BLOCKC)
+
+
+SEGMENT                          DATA_GROUP 
+  +--> CALLED SEGMENT          START    LENGTH
+----------------------------------------------
+?C_C51STARTUP                  -----    -----
+  +--> ?PR?MAIN?BLOCKC
+
+?PR?MAIN?BLOCKC                0008H    000BH
+  +--> ?CO?BLOCKC
+
+
+
+SYMBOL TABLE OF MODULE:  AverageC (BLOCKC)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        BLOCKC
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  C:0908H         PUBLIC        main
+  C:0943H         SYMBOL        _?ix1000
+BL51 BANKED LINKER/LOCATER V6.22                                                      03/29/2019  16:07:12  PAGE 2
+
+
+  -------         PROC          MAIN
+  -------         DO            
+  D:0008H         SYMBOL        mydata
+  D:0001H         SYMBOL        ptr
+  D:0007H         SYMBOL        i
+  -------         ENDDO         
+  C:0908H         LINE#         3
+  C:0908H         LINE#         4
+  C:0908H         LINE#         5
+  C:091BH         LINE#         8
+  C:091DH         LINE#         9
+  C:0921H         LINE#         10
+  C:0923H         LINE#         11
+  C:0923H         LINE#         12
+  C:092BH         LINE#         13
+  C:0932H         LINE#         14
+  C:0936H         LINE#         15
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        BLOCKC
+
+  -------         MODULE        ?C?COPY
+  C:08D0H         PUBLIC        ?C?COPY
+  -------         ENDMOD        ?C?COPY
+
+  -------         MODULE        ?C?CSTPTR
+  C:08F6H         PUBLIC        ?C?CSTPTR
+  -------         ENDMOD        ?C?CSTPTR
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 003AH BYTE ( 2%) *
+******************************************************************************
+
+Program Size: data=20.0 xdata=0 code=337
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

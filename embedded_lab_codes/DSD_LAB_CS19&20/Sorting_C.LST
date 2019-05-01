@@ -1,0 +1,44 @@
+C51 COMPILER V9.51   SORTING_C                                                             03/29/2019 15:17:10 PAGE 1   
+
+
+C51 COMPILER V9.51, COMPILATION OF MODULE SORTING_C
+OBJECT MODULE PLACED IN Sorting_C.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE Sorting_C.c BROWSE DEBUG OBJECTEXTEND TABS(2)
+
+line level    source
+
+   1          #include<reg51.h>
+   2          
+   3          void main()
+   4          {
+   5   1        unsigned int mydata[]={25,33,56,12,45};
+   6   1        unsigned char i,j;
+   7   1        for(i=0;i<4;i++)
+   8   1        {
+   9   2          for(j=i+1;j<5;j++)
+  10   2          {
+  11   3            if(mydata[j]<mydata[i])
+  12   3            {
+  13   4              unsigned int temp;
+  14   4              temp=mydata[i];
+  15   4              mydata[i]=mydata[j];
+  16   4              mydata[j]=temp;
+  17   4            }
+  18   3          }
+  19   2        }
+  20   1        P0=mydata[4];
+  21   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    105    ----
+   CONSTANT SIZE    =     10    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----      12
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

@@ -1,0 +1,55 @@
+A51 MACRO ASSEMBLER  SORTING_8051                                                         03/15/2019 14:56:11 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.02b
+OBJECT MODULE PLACED IN Sorting_8051.OBJ
+ASSEMBLER INVOKED BY: C:\Keil\C51\BIN\A51.EXE Sorting_8051.asm SET(SMALL) DEBUG EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     ORG 0000
+0000 7940              2     MOV R1,#40H
+0002 7B04              3     MOV R3,#04H
+0004 1B                4     DEC R3
+0005 8B06              5     MOV 06H,R3
+0007 850302            6     LOOP1 : MOV 02H,03H
+000A 87F0              7     MOV B,@R1
+000C 850100            8     MOV 00H,01H
+000F 08                9     INC R0
+0010 E8               10     LOOP2: MOV A,R0
+0011 B5F002           11     CJNE A,B,CHECK
+0014 8007             12     SJMP CONTINUE
+0016 5005             13     CHECK: JNC CONTINUE
+0018 A6F0             14     MOV @R0,B
+001A F7               15     MOV @R1,A
+001B 87F0             16     MOV B,@R1
+001D 08               17     CONTINUE:INC R0
+001E DAF0             18     DJNZ R2,LOOP2
+0020 09               19     INC R1
+0021 DBE4             20     DJNZ R3, LOOP1
+0023 743F             21     MOV A,#3FH
+0025 2E               22     ADD A,R6
+0026 F8               23     MOV R0,A
+0027 8690             24     MOV P1,@R0
+0029 80FE             25     SJMP $
+                      26     END
+A51 MACRO ASSEMBLER  SORTING_8051                                                         03/15/2019 14:56:11 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+B. . . . . . . . .  D ADDR   00F0H   A   
+CHECK. . . . . . .  C ADDR   0016H   A   
+CONTINUE . . . . .  C ADDR   001DH   A   
+LOOP1. . . . . . .  C ADDR   0007H   A   
+LOOP2. . . . . . .  C ADDR   0010H   A   
+P1 . . . . . . . .  D ADDR   0090H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

@@ -1,0 +1,48 @@
+A51 MACRO ASSEMBLER  ARRAY                                                                03/15/2019 14:57:41 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.02b
+OBJECT MODULE PLACED IN array.OBJ
+ASSEMBLER INVOKED BY: C:\Keil\C51\BIN\A51.EXE array.asm SET(SMALL) DEBUG EP
+
+LOC  OBJ            LINE     SOURCE
+
+0300                   1     ORG 300H        ;
+0300 01040506          2     DB 1,4,5,6,7    ;
+0304 07                      
+                       3     ; ARRAY OF 5
+0000                   4     ORG 0000H       ;
+0000 900300            5     MOV DPTR, #0300H;
+                       6     ; FIRST COUNTER
+0003 7F05              7     MOV R7, #05H    ;
+0005 7400              8     MOV A, #00H     ;
+0007 7800              9     MOV R0, #00H    ;
+                      10     ; SUM VARIABLE
+0009 7E00             11     MOV R6,#00H     ;
+                      12     
+000B                  13     LOOP:
+000B E8               14                     MOV A, R0       ;
+000C 93               15                     MOVC A,@A+DPTR  ;
+000D 2E               16                     ADD A, R6       ;
+000E FE               17                     MOV R6,A        ;
+000F 08               18                     INC R0          ;
+0010 DFF9             19                     DJNZ R7, LOOP   ;
+                      20     
+0012 8E80             21     MOV P0, R6
+                      22     END
+A51 MACRO ASSEMBLER  ARRAY                                                                03/15/2019 14:57:41 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+LOOP . . . . . . .  C ADDR   000BH   A   
+P0 . . . . . . . .  D ADDR   0080H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

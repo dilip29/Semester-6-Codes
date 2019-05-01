@@ -1,0 +1,38 @@
+C51 COMPILER V9.51   BLOCKC                                                                03/29/2019 16:07:12 PAGE 1   
+
+
+C51 COMPILER V9.51, COMPILATION OF MODULE BLOCKC
+OBJECT MODULE PLACED IN BlockC.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE BlockC.c BROWSE DEBUG OBJECTEXTEND TABS(2)
+
+line level    source
+
+   1          #include<reg51.h>
+   2          
+   3          void main()
+   4          {
+   5   1      unsigned char mydata[]={"HelloWorld"};
+   6   1      unsigned char *ptr;
+   7   1      unsigned char i;
+   8   1      ptr=mydata;
+   9   1      ptr=0x0010;
+  10   1      for(i=0;i<10;i++)
+  11   1      {
+  12   2        *ptr=mydata[i];
+  13   2        ptr++;
+  14   2      }
+  15   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     47    ----
+   CONSTANT SIZE    =     11    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----      11
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

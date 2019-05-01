@@ -1,0 +1,42 @@
+A51 MACRO ASSEMBLER  BLOCK_MOVE                                                           03/15/2019 17:01:45 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.02b
+OBJECT MODULE PLACED IN Block_Move.OBJ
+ASSEMBLER INVOKED BY: C:\Keil\C51\BIN\A51.EXE Block_Move.asm SET(SMALL) DEBUG EP
+
+LOC  OBJ            LINE     SOURCE
+
+0020                   1     ORG 20H        
+0020 48656C6C          2     DB "HelloWorld"
+0024 6F576F72                
+0028 6C64                    
+002A 900000            3     MOV DPTR, #0000H
+0000                   4     ORG 0000H       
+0000 7830              5     MOV R0,#30H
+0002 7920              6     MOV R1,#20H
+0004 7A0A              7     MOV R2,#0AH
+0006 7B00              8     MOV R3,#00H
+0008 E9                9     UP:     MOV A, R1
+0009 93               10             MOVC A, @A+DPTR
+000A FB               11             MOV R3, A
+000B F6               12             MOV @R0, A
+000C 08               13             INC R0
+000D 09               14             INC R1
+000E DAF8             15             DJNZ R2,UP
+                      16     END
+A51 MACRO ASSEMBLER  BLOCK_MOVE                                                           03/15/2019 17:01:45 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+UP . . . . . . . .  C ADDR   0008H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)
